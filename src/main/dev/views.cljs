@@ -1,7 +1,8 @@
 (ns dev.views
   (:require
    ["react-native" :as rn]
-   [re-frame.core :as re-frame]
+   [re-frame.core :as rf]
+   [dev.events :as events]
    [dev.subs :as subs]
    ))
 
@@ -20,6 +21,7 @@
           (rn/StyleSheet.create)))
 
 (defn root []
-  (let [name (re-frame/subscribe [::subs/name])]
+  (let [name (rf/subscribe [::subs/name])]
   [:> rn/View {:style (.-container styles)}
-   [:> rn/Text {:style (.-title styles)} "Hello !" @name]]))
+   [:> rn/Text {:style (.-title styles)} "Hello: " @name]
+   [:> rn/Button {:title "update name" :on-press #(rf/dispatch [::events/update-name "🥳"])}]]))
