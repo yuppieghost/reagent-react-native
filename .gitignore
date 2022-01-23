@@ -1,6 +1,6 @@
 node_modules/**/*
 .shadow-cljs/
-/react-native/app/
+/AwesomeProject/app/
 .idea/
 /pom.xml
 /*.iml
