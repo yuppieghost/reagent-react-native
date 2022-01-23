@@ -2,7 +2,7 @@
   (:require
    ["react-native" :as rn]
    [reagent.core :as r]
-   ["react-native-safe-area-context" :refer [SafeAreaProvider]]
+   ["react-native-safe-area-context" :refer [SafeAreaProvider SafeAreaView]]
    [re-frame.core :as rf]
    [dev.events :as events]
    [dev.subs :as subs]))
@@ -44,7 +44,7 @@
         loading (rf/subscribe [::subs/loading])
         users (rf/subscribe [::subs/users])]
     [:> SafeAreaProvider
-     [:> rn/View {:style (.-container styles)}
+     [:> SafeAreaView {:style (.-container styles)}
       [:> rn/Text {:style (.-title styles)} "Hello: " @name]
       (when @loading [:> rn/Text "loading..."])
       (todo-list)
