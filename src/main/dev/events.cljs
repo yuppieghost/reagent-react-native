@@ -36,5 +36,7 @@
  ::fetch-users-success
  (fn [db [_ {:keys [data]}]]
    (-> db
-    (assoc :loading false)
-    (assoc :users data))))
+       (assoc :loading false)
+       (assoc :users data)
+       (println)
+       )))
