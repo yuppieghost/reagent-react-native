@@ -2,6 +2,7 @@
   (:require
    ["react-native" :as rn]
    [reagent.core :as r]
+   ["react-native-safe-area-context" :refer [SafeAreaProvider]]
    [re-frame.core :as rf]
    [dev.events :as events]
    [dev.subs :as subs]))
@@ -42,10 +43,11 @@
   (let [name (rf/subscribe [::subs/name])
         loading (rf/subscribe [::subs/loading])
         users (rf/subscribe [::subs/users])]
-    [:> rn/View {:style (.-container styles)}
-     [:> rn/Text {:style (.-title styles)} "Hello: " @name]
-     (when @loading [:> rn/Text "loading..."])
-     (todo-list)
+    [:> SafeAreaProvider
+     [:> rn/View {:style (.-container styles)}
+      [:> rn/Text {:style (.-title styles)} "Hello: " @name]
+      (when @loading [:> rn/Text "loading..."])
+      (todo-list)
     ;;  (display-user @users)
-     [:> rn/Button {:on-press #(rf/dispatch [::events/fetch-users]) :title "Make API Call"}]
-     [:> rn/Button {:title "update name!" :on-press #(rf/dispatch [::events/update-name "🥳"])}]]))
+      [:> rn/Button {:on-press #(rf/dispatch [::events/fetch-users]) :title "Make API Call"}]
+      [:> rn/Button {:title "update name!" :on-press #(rf/dispatch [::events/update-name "🥳"])}]]]))
