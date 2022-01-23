@@ -1,0 +1,1 @@
+{"version":3,"sources":["dev/events.cljs"],"mappings":";AAMA,yDAAA,zDAACA,kJAEA,WAAKC,EAAEA;AAAP,AACEC","names":["re_frame.core.reg_event_db","_","dev.db/default-db"],"sourcesContent":["(ns dev.events\n  (:require\n   [re-frame.core :as re-frame]\n   [dev.db :as db]\n   ))\n\n(re-frame/reg-event-db\n ::initialize-db\n (fn [_ _]\n   db/default-db))\n"]}

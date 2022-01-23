@@ -2,6 +2,9 @@
   "name": "AwesomeProject",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "start": "npx shadow-cljs watch app"
+  },
   "dependencies": {},
   "devDependencies": {
     "shadow-cljs": "^2.14.6"

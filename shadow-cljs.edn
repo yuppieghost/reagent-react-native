@@ -5,11 +5,14 @@
   "src/test"]
 
  :dependencies
- [[reagent "1.1.0"]]
+ [[reagent "1.1.0"]
+  [re-frame "1.2.0"]
+   [binaryage/devtools "1.0.3"]
+  [day8.re-frame/http-fx "0.2.4"]]
 
  :builds
  {:app
   {:target :react-native
-   :init-fn test.app/init
+   :init-fn dev.app/init
    :output-dir "AwesomeProject/app"
    :js-options {:js-package-dirs ["AwesomeProject/node_modules"]}}}}
