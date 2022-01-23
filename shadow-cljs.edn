@@ -11,5 +11,5 @@
  {:app
   {:target :react-native
    :init-fn test.app/init
-   :output-dir "react-native/app"
-   :js-options {:js-package-dirs ["react-native/node_modules"]}}}}
+   :output-dir "AwesomeProject/app"
+   :js-options {:js-package-dirs ["AwesomeProject/node_modules"]}}}}
