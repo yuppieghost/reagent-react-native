@@ -7,7 +7,8 @@
  :dependencies
  [[reagent "1.1.0"]
   [re-frame "1.2.0"]
-  [binaryage/devtools "1.0.3"]
+  [re-frisk-remote "1.5.2"]
+  [binaryage/devtools "1.0.4"]
   [day8.re-frame/http-fx "0.2.4"]]
 
  :builds
@@ -15,6 +16,6 @@
   {:target :react-native
    :init-fn dev.app/init
    :output-dir "CoinGuard/app"
-   :devtools
-   {:preloads []}
+   :compiler-options {:closure-defines {"re_frame.trace.trace_enabled_QMARK_" true}}
+   :devtools {:preloads [re-frisk-remote.preload devtools.preload]}
    :js-options {:js-package-dirs ["CoinGuard/node_modules"]}}}}
