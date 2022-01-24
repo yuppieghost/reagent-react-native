@@ -1,6 +1,6 @@
 node_modules/**/*
 .shadow-cljs/
-/AwesomeProject/app/
+CoinGuard/app/
 .idea/
 /pom.xml
 /*.iml

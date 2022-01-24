@@ -10,7 +10,7 @@
 
  (defn ^:dev/after-load start []
   (re-frame/clear-subscription-cache!)
-  (render-root "AwesomeProject" (r/as-element [views/root])))
+  (render-root "CoinGuard" (r/as-element [views/root])))
 
 
 (defn dev-setup []
