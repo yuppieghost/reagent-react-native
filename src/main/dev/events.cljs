@@ -28,9 +28,11 @@
                  :on-failure      [:bad-http-result]}}))
 
 
-(-> {}
-    (assoc :loading false)
-    (assoc :users "data"))
+(comment
+  (-> {}
+      (assoc :loading false)
+      (assoc :users "data"))
+  )
 
 (re-frame/reg-event-db
  ::fetch-users-success
